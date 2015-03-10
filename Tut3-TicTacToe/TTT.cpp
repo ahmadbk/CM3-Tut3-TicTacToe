@@ -25,7 +25,7 @@ void TTT::restart()
 			grid[i][j] = ' ';
 };
 
-bool TTT::move(int r, int c,int p)
+bool TTT::move(int r, int c, int p)
 {
 	bool flag = 0;
 	if (r < 3 && c < 3)
@@ -63,6 +63,7 @@ int TTT::isWon()
 {
 	int checkp1 = 0;
 	int checkp2 = 0;
+	int result;
 
 	//check rows
 	for (int i = 1; i <= 3; i++)
@@ -77,7 +78,7 @@ int TTT::isWon()
 		if (checkp1 == 3)
 			return 1;
 		if (checkp2 == 3)
-			return 0;
+			return 2;
 	};
 	checkp1 = 0;
 	checkp2 = 0;
@@ -95,7 +96,7 @@ int TTT::isWon()
 		if (checkp1 == 3)
 			return 1;
 		if (checkp2 == 3)
-			return 0;
+			return 2;
 	};
 	checkp1 = 0;
 	checkp2 = 0;
@@ -111,7 +112,7 @@ int TTT::isWon()
 	if (checkp1 == 3)
 		return 1;
 	if (checkp2 == 3)
-		return 0;
+		return 2;
 
 	return 0;
 };
