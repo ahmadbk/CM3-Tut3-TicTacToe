@@ -104,7 +104,7 @@ int TTT::isWon()
 	checkp1 = 0;
 	checkp2 = 0;
 
-	//check diagnol
+	//check 1st diagnol
 	for (int i = 1; i <= 3; i++)
 	{
 		if (grid[i][i] == 'x')
@@ -112,6 +112,23 @@ int TTT::isWon()
 		if (grid[i][i] == 'o')
 			checkp2++;
 	};
+
+	if (checkp1 == 3)
+		return 1;
+	if (checkp2 == 3)
+		return 2;
+
+	//1,3 ---- 2,2 ----- 3,1
+	int t = 1;
+		for (int j = 3; j >= 1; j--)
+		{
+			if (grid[t][j] == 'x')
+				checkp1++;
+			if (grid[t][j] == 'o')
+				checkp2++;
+			t++;
+		}
+	
 	if (checkp1 == 3)
 		return 1;
 	if (checkp2 == 3)
