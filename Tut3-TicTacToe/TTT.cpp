@@ -69,6 +69,8 @@ int TTT::isWon()
 	//check rows
 	for (int i = 1; i <= 3; i++)
 	{
+		checkp1 = 0;
+		checkp2 = 0;
 		for (int j = 1; j <= 3; j++)
 		{
 			if (grid[i][j] == 'x')
@@ -87,6 +89,8 @@ int TTT::isWon()
 	//check columns
 	for (int i = 1; i <=3; i++)
 	{
+		checkp1 = 0;
+		checkp2 = 0;
 		for (int j = 1; j <= 3; j++)
 		{
 			if (grid[j][i] == 'x')
@@ -121,6 +125,7 @@ int TTT::isWon()
 	checkp1 = 0;
 	checkp2 = 0;
 
+	//check 2nd diagnol
 	int t = 1;
 		for (int j = 3; j >= 1; j--)
 		{
@@ -130,11 +135,11 @@ int TTT::isWon()
 				checkp2++;
 			t++;
 		}
-	
 	if (checkp1 == 3)
 		return 1;
 	if (checkp2 == 3)
 		return 2;
+
 
 	if (inPlay = 1)
 		return 3;
