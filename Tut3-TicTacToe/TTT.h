@@ -9,8 +9,7 @@ class TTT
 {
 
 private:
-	char grid[3][2];
-	//int player;
+	char grid[3][3];
 
 public:
 	TTT();

@@ -9,7 +9,7 @@ TTT::TTT()
 {
 	for (int i = 1; i <= 3; i++)
 		for (int j = 1; j <= 3; j++)
-			grid[i][j] = ' ';
+			grid[i][j] = '-';
 	
 };
 
@@ -22,15 +22,15 @@ void TTT::restart()
 {
 	for (int i = 1; i <= 3; i++)
 		for (int j = 1; j <= 3; j++)
-			grid[i][j] = ' ';
+			grid[i][j] = '-';
 };
 
 bool TTT::move(int r, int c, int p)
 {
 	bool flag = 0;
-	if (r < 3 && c < 3)
+	if (r < 4 && c < 4)
 	{
-		if (grid[r][c] != ' ')
+		if (grid[r][c] == '-')
 		{
 			flag = 1;
 			if (p == 1)
@@ -93,7 +93,7 @@ int TTT::isWon()
 				checkp1++;
 			if (grid[j][i] == 'o')
 				checkp2++;
-			if (grid[j][i] == ' ')
+			if (grid[j][i] == '-')
 				inPlay = 1;
 		};
 		if (checkp1 == 3)
