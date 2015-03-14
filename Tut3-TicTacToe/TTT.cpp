@@ -118,7 +118,9 @@ int TTT::isWon()
 	if (checkp2 == 3)
 		return 2;
 
-	//1,3 ---- 2,2 ----- 3,1
+	checkp1 = 0;
+	checkp2 = 0;
+
 	int t = 1;
 		for (int j = 3; j >= 1; j--)
 		{
