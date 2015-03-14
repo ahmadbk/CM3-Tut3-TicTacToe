@@ -64,6 +64,7 @@ int TTT::isWon()
 	int checkp1 = 0;
 	int checkp2 = 0;
 	int result;
+	int inPlay = 0;
 
 	//check rows
 	for (int i = 1; i <= 3; i++)
@@ -92,6 +93,8 @@ int TTT::isWon()
 				checkp1++;
 			if (grid[j][i] == 'o')
 				checkp2++;
+			if (grid[j][i] == ' ')
+				inPlay = 1;
 		};
 		if (checkp1 == 3)
 			return 1;
@@ -114,6 +117,9 @@ int TTT::isWon()
 	if (checkp2 == 3)
 		return 2;
 
-	return 0;
+	if (inPlay = 1)
+		return 3;
+	else
+		return 0;
 };
 

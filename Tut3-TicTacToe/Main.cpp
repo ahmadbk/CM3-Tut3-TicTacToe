@@ -15,7 +15,7 @@ int main()
 		bool m;
 		cout << "Player " << cPlayer << ": Enter co-ordinates (r,c):";
 		cin >> r >> n >> c;
-		m = move(r, c, cPlayer);
+		m = game.move(r, c, cPlayer);
 		while (!m)
 		{
 			cout << "Invalid Entry! Try Again " << endl;
@@ -28,14 +28,14 @@ int main()
 
 		game.print();
 
-		if (i == 9)
-		{
 			int result;
 			result = game.isWon();
-			if (result != 0)
+			if (result != 0 && result != 3)
 				cout << "The winner of the game is: Player " << result << endl;
-			else
+			else if (result == 0)
 				cout << "The game ended a draw";
-		};
+			else
+				cout << "The game is still being played";
+
 	};
 }

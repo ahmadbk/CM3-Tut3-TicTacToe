@@ -3,15 +3,14 @@
 #define TTT_H
 #include<string>
 
-
 using namespace std;
 
 class TTT
 {
 
 private:
-	char grid[3][3];
-	int player;
+	char grid[3][2];
+	//int player;
 
 public:
 	TTT();
